@@ -20,7 +20,8 @@
         app:progressButtonColor="@color/colorPrimaryDark"
         app:progressArcColor="@color/colorAccent"
         app:textColor="@color/white"
-        app:download="@string/button_name"
+        app:defaultText="@string/button_name"
+        app:loadingText="@string/button_loading"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

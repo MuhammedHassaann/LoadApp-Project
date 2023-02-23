@@ -21,8 +21,8 @@ class LoadingButton @JvmOverloads constructor(
     private var buttonProgress = 0f
     private var arcProgress = 0f
     private val animationDuration =1000L
-    private val loading = resources.getString(R.string.button_loading)
-    private var download =""
+    private var loadingText = ""
+    private var defaultText = ""
     private var mainColor = 0
     private var progressButtonColor = 0
     private var progressArcColor = 0
@@ -46,7 +46,7 @@ class LoadingButton @JvmOverloads constructor(
 
 
     private fun loadingProgress() {
-        buttonTitle = loading
+        buttonTitle = loadingText
         valueAnimator = ValueAnimator.ofFloat(0f,widthSize.toFloat()).apply {
             duration = animationDuration
             interpolator = LinearInterpolator()
@@ -70,7 +70,7 @@ class LoadingButton @JvmOverloads constructor(
 
     private fun completedProgress() {
         valueAnimator.cancel()
-        buttonTitle = download
+        buttonTitle = defaultText
         invalidate()
     }
 
@@ -80,9 +80,10 @@ class LoadingButton @JvmOverloads constructor(
             progressButtonColor = getColor(R.styleable.LoadingButton_progressButtonColor,0)
             progressArcColor = getColor(R.styleable.LoadingButton_progressArcColor,0)
             textColor = getColor(R.styleable.LoadingButton_textColor,0)
-            download = getString(R.styleable.LoadingButton_download).toString()
+            defaultText = getString(R.styleable.LoadingButton_defaultText).toString()
+            loadingText = getString(R.styleable.LoadingButton_loadingText).toString()
         }
-        buttonTitle = download
+        buttonTitle = defaultText
     }
 
 
