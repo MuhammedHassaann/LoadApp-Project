@@ -41,6 +41,11 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        unregisterReceiver(receiver)
+    }
+
 
     private fun checkSelectedFile(){
         when(contentBinding.radioGroup.checkedRadioButtonId){
