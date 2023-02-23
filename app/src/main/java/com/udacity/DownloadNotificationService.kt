@@ -23,7 +23,7 @@ class DownloadNotificationService(
             context,
             1,
             detailActivityIntent,
-            PendingIntent.FLAG_UPDATE_CURRENT
+            PendingIntent.FLAG_MUTABLE
         )
 
         val notificationTitle = context.getString(R.string.notification_title)
