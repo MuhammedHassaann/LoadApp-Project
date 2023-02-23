@@ -55,6 +55,7 @@ class LoadingButton @JvmOverloads constructor(
                 arcProgress = (buttonProgress/1000) * 360f
                 invalidate()
             }
+            repeatCount = ValueAnimator.INFINITE
         }
         valueAnimator.addListener(object: AnimatorListenerAdapter(){
             override fun onAnimationEnd(animation: Animator) {
